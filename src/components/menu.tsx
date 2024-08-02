@@ -1,4 +1,5 @@
 import { IconButton } from "./iconButton";
+import { TextButton } from "./textButton";
 import { Message } from "@/features/messages/messages";
 import { KoeiroParam } from "@/features/constants/koeiroParam";
 import { ChatLog } from "./chatLog";
@@ -171,7 +172,7 @@ export const Menu = ({
   onChangeShowCharacterName,
 }: Props) => {
   const [showSettings, setShowSettings] = useState(false);
-  const [showChatLog, setShowChatLog] = useState(false);
+  const [showChatLog, setShowChatLog] = useState(true);
   const { viewer } = useContext(ViewerContext);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const bgFileInputRef = useRef<HTMLInputElement>(null);
@@ -458,6 +459,15 @@ export const Menu = ({
               onClick={() => setShowChatLog(true)}
             />
           )}
+        </div>
+        <div className="my-8 grid-cols-2">
+          <TextButton onClick={() => {
+            handleClickResetChatLog();
+            handleClickResetCodeLog();
+            onChangeDifyConversationId("");
+          }}>
+            {t('ConversationHistoryReset')}
+          </TextButton>
         </div>
       </div>
       {

@@ -204,7 +204,7 @@ export const Settings = ({
 
   return (
     <div className="absolute z-40 w-full h-full bg-white/80 backdrop-blur ">
-      <GitHubLink />
+      {/* <GitHubLink /> */}
       <div className="absolute m-24">
         <IconButton
           iconName="24/Close"
